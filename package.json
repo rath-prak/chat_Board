@@ -1,0 +1,24 @@
+{
+  "name": "kittySocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rath-prak/kittySocks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rath-prak/kittySocks/issues"
+  },
+  "homepage": "https://github.com/rath-prak/kittySocks#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "*"
+  }
+}
