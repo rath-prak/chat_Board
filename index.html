@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>kittyChat</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body>
+	<div id="container">
+		<div id="namesWrapper"> <!-- this is the username login section -->
+			<h2>Kitty Chat</h2>
+			<p>create username</p>
+			<form id="usernameForm">
+				<input size="35" id="username">
+				<input type="submit" value="submit">
+			</form>
+		</div> <!-- End of namesWrapper -->
+		<div id="mainWrapper"> <!-- this will show when username has been selected -->
+			<h2>Kitty Chat</h2>
+			<div id="chatWrapper">
+				<div id="chatWindow">
+				</div>
+				<form id="messageForm">
+					<input size="35" id="message" placeholder="type a message...">
+					<input type="submit" value="send">
+				</form>
+			</div>
+			<div id="userWrapper"> <!-- this will be generated dynamically  -->
+				<div id="user">
+					
+				</div>
+			</div>
+
+		</div> <!-- end of main wrapper -->
+	</div> <!-- end of main container -->
+
+
+
+</body>
+</html>
