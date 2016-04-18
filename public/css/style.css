@@ -10,7 +10,7 @@ body{
 	height: 300px;
 	background: #D8E3E6;
 }
-#mainWrapper{
+#contentWrapper{
 	/*display: none;*/
 }
 #chatWrapper{

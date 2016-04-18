@@ -5,6 +5,7 @@ var path = require('path');
 
 var io = require('socket.io').listen(server);
 
+
 server.listen(process.env.PORT || 3000, function(){
 	console.log('Listening to port 3000...')
 });
@@ -19,39 +20,39 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + '/views/index.html'); // send file to client
 });
 
-// connect to socket
-// var usernames = [];
 
+var nickname = [];
 
 io.sockets.on('connection', function(socket){  //this is the first thing that fired when client connects to socket.io, all the code goes inside here
-	// socket.on('new user', function(data, callback){
-	// 	if(usernames.indexOf(data) != -1){
-	// 		callback(false);
-	// 	}else{
+	
+	socket.on('new user', function(data, callback){
+		if(nickname.indexOf(data) != -1){ //testing if there is a username which is the same as the one thats already passed in
+			callback(false);
+		}else{
+			callback(true);
+			socket.username = data;
+			nickname.push(socket.username);
+			updateNicknames();
+		}
 
-	// 		callback(true);
-	// 		socket.username = data;
-	// 		usernames.push(socket.username); //add new user to array
-	// 		updateUsernames();
-	// 	}
-	// });
+	});	
 
-	// update usernames
-	// function updateUsernames(){
-	// 	io.sockets.emit('usernames', usernames);
-	// }
-
+	//update nicknames
+	function updateNicknames(){
+		io.sockets.emit('nickname', nickname);
+	}
+	
 	//send message
 	socket.on('send message', function(data){ //'send message' same name we used on the client side, then use the data and do something with it 
-		io.sockets.emit('new message', data); // 'new message', same as on client side
+		io.sockets.emit('new message', {msg: data, user: socket.username}); // 'new message', same as on client side
 	}); 
 
-	//disconnect
-	// socket.on('disconnect', function(data){
-	// 	if(!socket.username) return; 
-	// 	usernames.splice(usernames.indexOf(socket.username), 1);
-	// 	updateUsernames();
-	// });
+	socket.on('disconnect', function(data){ 
+		if(!socket.username) return;
+		nickname.splice(nickname.indexOf(socket.username), 1);
+		updateNicknames();
+	});
+
 })
 
 

@@ -18,7 +18,7 @@
 	height: 300px;
 	background: #D8E3E6;
 }
-#mainWrapper{
+#contentWrapper{
 /*	display: none;
 */}
 #chatWrapper{
@@ -69,7 +69,7 @@ input{
 				<input type="submit" value="submit">
 			</form>
 		</div> <!-- End of namesWrapper -->
-		<div id="mainWrapper"> <!-- this will show when username has been selected -->
+		<div id="contentWrapper"> <!-- this will show when username has been selected -->
 			<h2>Kitty Chat</h2>
 			<div id="chatWrapper">
 				<div id="chatWindow">
@@ -99,10 +99,33 @@ input{
 			var message = $('#message');
 			var chat = $('#chatWindow');
 
-			var usernameForm = $('#usernameForm');
-			var user = $('#users');
+			var usernameForm = $('#usernameForm'); // adding new users
+			var users = $('#users'); // array of users
 			var username = $('#username');
 			var error = $('#error');
+
+			//add event handler
+			usernameForm.submit(function(e){
+				e.preventDefault();
+				socket.emit('new user', username.val(), function(data){ // look at param for socket.emit
+					if(data){
+						$('#namesWrapper').hide();
+						$('#mainWrapper').show();
+					}else{
+						error.html('please choose new nickname');
+					}
+				});
+				username.val('');
+			});
+
+			socket.on('nickname', function(data){ // this is adding new users to the screen?
+				var html = '';
+				for(i = 0; i < data.length; i++){
+					html += data[i] + '<br>';
+				}
+				users.html(html);
+			});
+
 
 			messageForm.submit(function(e){ //bind an event handler to the messageForm
 				e.preventDefault(); //prevent default because we dont want the form to summit and refresh
@@ -112,45 +135,13 @@ input{
 			});
 
 			socket.on('new message', function(data){
-				chat.append(data + '<br>'); 
+				chat.append('<strong>' + data.user + '</strong>: ' + data.msg + '<br>'); 
 			});
 
 
 
 
-		// 	usernameForm.submit(function(){
-		// 		e.eventDefault();
-		// 		socket.emit('new user', username.val(), function(data){
-		// 			if(data){
-		// 				$('#namesWrapper').hide();
-		// 				$('#mainWrapper').show();
-		// 			}else{
-		// 				error.html('name taken...')
-		// 			}
-		// 		});
-		// 		username.val('');
-		// 	});
-
-
-		// 	socket.on('usernames', function(data){
-		// 		var html = '';
-		// 		for (i = 0; i < data.length; i++){
-		// 			html += data[i] + '<br>';
-		// 		}
-		// 		users.html(html);
-		// 	})
-
-		// 	messageForm.submit(function(e){
-		// 		e.preventDefault();
-		// 		socket.emit('send message', message.val()); // send what ever the user types in
-		// 		message.val(''); //this clears the message window
-		// 	});
-
-		// 	socket.on('new message', function(data){
-		// 		chat.append('<stong>' + data.users + '</strong>: ' + data.msg + '<br>');
-		// 	})
 	});
-
 
 	</script>
 </body>
