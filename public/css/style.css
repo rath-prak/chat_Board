@@ -11,7 +11,7 @@ body{
 	background: #D8E3E6;
 }
 #mainWrapper{
-	display: none;
+	/*display: none;*/
 }
 #chatWrapper{
 	float: left;
