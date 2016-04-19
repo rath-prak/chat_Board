@@ -1,9 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,300);
+
+
 body{
-	background: teal;
-}
-#container{
-	width: 900px;
-	margin: 0 auto;
+	font-family: 'Roboto', sans-serif;
 }
 
 #chatWindow{
@@ -11,7 +10,7 @@ body{
 	background: #D8E3E6;
 }
 #contentWrapper{
-	/*display: none;*/
+
 }
 #chatWrapper{
 	float: left;
@@ -27,19 +26,78 @@ body{
 	background: #9CCFE6;
 	padding: 10px;
 	margin-left: 20px;
-	width: 200px;
-	/*max-height: 200px;*/
-	height: 150px;
+
 }
 #namesWrapper{
-	float: left;
-	border: 1px #858C8D solid;
-	border-radius: 5px;
-	background: #9CCFE6;
-	padding: 10px;
-	margin-left: 20px;
+	background: #ff015b;
+	/*background: url('../img/bg.jpeg');
+	background-size: cover;*/
+
 }
+
+.graphicContent{
+	margin: 0 auto;
+	width: 750px;
+	text-align: center;
+}
+
+#username{
+	width: 350px;
+	height: 48px;
+	border-radius: 5px; /*dont forget to add vendor prefixes*/
+	border: 0px solid;
+	margin-top: 60px;
+	margin-left: 10px;
+
+	color: white;
+	font-weight: 900;
+	font-size: 15px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding-left: 20px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  padding-left: 20px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  padding-left: 20px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  padding-left: 20px;
+}
+
+input:focus {
+    outline:none;
+}
+
+#joinChat{
+	width: 150px;
+	height: 50px;
+	border-radius: 5px; /*dont forget to add vendor prefixes*/
+	border: 1px solid white;
+	background: none;
+	margin-top: 60px;
+	margin-left: 5px;
+	color: white;
+	font-weight: 900;
+	font-size: 15px;
+}
+#joinChat:hover{
+	background: #DA004D;
+
+}
+
 input{
 	height: 30px;
+}
+#logo img{
+	display: inline-block;
+	float: left;
+	width: 225px;
+}
+#usernameForm{
+	display: inline-block;
+	float: left;
 }
 

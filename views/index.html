@@ -3,73 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>kittyChat</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/alvarotrigo/pagePiling.js/master/jquery.pagepiling.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-
-	<style>
-/*	body{
-	background: teal;
-}
-#container{
-	width: 900px;
-	margin: 0 auto;
-}
-
-#chatWindow{
-	height: 300px;
-	background: #D8E3E6;
-}
-#contentWrapper{
-	display: none;
-
-#chatWrapper{
-	float: left;
-	border: 1px #858C8D solid;
-	border-radius: 5px;
-	background: #9CCFE6;
-	padding: 10px;
-}
-#userWrapper{
-	float: left;
-	border: 1px #858C8D solid;
-	border-radius: 5px;
-	background: #9CCFE6;
-	padding: 10px;
-	margin-left: 20px;
-	width: 200px;
-	height: 150px;
-}
-#namesWrapper{
-	float: left;
-	border: 1px #858C8D solid;
-	border-radius: 5px;
-	background: #9CCFE6;
-	padding: 10px;
-	margin-left: 20px;
-}
-input{
-	height: 30px;
-}
-
-*/
-
-*/
-
-	</style>
-
 
 </head>
 <body>
-	<div id="container">
-		<div id="namesWrapper"> <!-- this is the username login section -->
-			<h2>Kitty Chat</h2>
-			<p>create username</p>
-			<form id="usernameForm">
-				<input size="40" id="username">
-				<input type="submit" value="submit">
-			</form>
+	<div id="pagepiling">
+		
+		<div id="namesWrapper" class="section"> <!-- this is the username login section -->
+			<div class="graphicContent">
+				<div id="logo"><img src="./img/epl.png" alt="main logo"></div>
+				<form id="usernameForm">
+					<input id="username" placeholder="nickname">
+					<input id="joinChat" type="submit" value="join chat">
+				</form>
+			</div>	
 		</div> <!-- End of namesWrapper -->
-	<div>	
-		<div id="contentWrapper"> <!-- this will show when username has been selected -->
+	
+
+		<div id="contentWrapper" class="section"> <!-- this will show when username has been selected -->
 			<h2>Kitty Chat</h2>
 			<div id="chatWrapper">
 				<div id="chatWindow">
@@ -84,69 +37,24 @@ input{
 					
 				</div>
 			</div>
-
 		</div> <!-- end of main wrapper -->
-	</div>	
+	
 	</div> <!-- end of main container -->
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/alvarotrigo/pagePiling.js/master/jquery.pagepiling.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="./index.js"></script>
 
-	<script src="./index.js">
-	// 	$(document).ready(function(){
-	// 		var socket = io.connect(); //grabbing the socket functionality from socket
-	// 		var messageForm = $('#messageForm');
-	// 		var message = $('#message');
-	// 		var chat = $('#chatWindow');
-
-	// 		var usernameForm = $('#usernameForm'); // adding new users
-	// 		var users = $('#users'); // array of users
-	// 		var username = $('#username');
-	// 		var error = $('#error');
-
-	// 		var timeInMs = Date.now();
-
-	// 		//add event handler
-	// 		usernameForm.submit(function(e){
-	// 			e.preventDefault();
-	// 			socket.emit('new user', username.val(), function(data){ // look at param for socket.emit
-	// 				if(data){
-	// 					$('#namesWrapper').hide();
-	// 					$('#mainWrapper').show();
-	// 				}else{
-	// 					error.html('please choose new nickname');
-	// 				}
-	// 			});
-	// 			username.val('');
-	// 		});
-
-	// 		socket.on('nickname', function(data){ // this is adding new users to the screen?
-	// 			var html = '';
-	// 			for(i = 0; i < data.length; i++){
-	// 				html += data[i] + '<br>';
-	// 			}
-	// 			users.html(html);
-	// 		});
+<!-- 	<script type="text/javascript">
+            $(document).ready(function() {
+                $('#pagepiling').pagepiling({direction: 'horizontal'});
+            });
+    </script> -->
 
 
-	// 		messageForm.submit(function(e){ //bind an event handler to the messageForm
-	// 			e.preventDefault(); //prevent default because we dont want the form to summit and refresh
-	// 			socket.emit('send message', message.val()); //send message to the server
-	// 			message.val(''); //after the message has been sent, the window is cleared
-
-	// 		});
-
-	// 		socket.on('new message', function(data){
-	// 			chat.append(timeInMs + '<br>' + '<strong>' + data.user + '</strong>: ' + data.msg + '<br>'); 
-	// 		});
-
-
-
-
-	// });
-
-	</script>
+	
 </body>
 </html>
 
