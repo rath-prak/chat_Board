@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>kittyChat</title>
-	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 
 	<style>
-	body{
+/*	body{
 	background: teal;
 }
 #container{
@@ -19,8 +19,8 @@
 	background: #D8E3E6;
 }
 #contentWrapper{
-/*	display: none;
-*/}
+	display: none;
+
 #chatWrapper{
 	float: left;
 	border: 1px #858C8D solid;
@@ -36,7 +36,6 @@
 	padding: 10px;
 	margin-left: 20px;
 	width: 200px;
-	/*max-height: 200px;*/
 	height: 150px;
 }
 #namesWrapper{
@@ -51,9 +50,9 @@ input{
 	height: 30px;
 }
 
+*/
 
-
-
+*/
 
 	</style>
 
@@ -69,6 +68,7 @@ input{
 				<input type="submit" value="submit">
 			</form>
 		</div> <!-- End of namesWrapper -->
+	<div>	
 		<div id="contentWrapper"> <!-- this will show when username has been selected -->
 			<h2>Kitty Chat</h2>
 			<div id="chatWrapper">
@@ -86,62 +86,65 @@ input{
 			</div>
 
 		</div> <!-- end of main wrapper -->
+	</div>	
 	</div> <!-- end of main container -->
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
-	<script>
-		$(document).ready(function(){
-			var socket = io.connect(); //grabbing the socket functionality from socket
-			var messageForm = $('#messageForm');
-			var message = $('#message');
-			var chat = $('#chatWindow');
+	<script src="./index.js">
+	// 	$(document).ready(function(){
+	// 		var socket = io.connect(); //grabbing the socket functionality from socket
+	// 		var messageForm = $('#messageForm');
+	// 		var message = $('#message');
+	// 		var chat = $('#chatWindow');
 
-			var usernameForm = $('#usernameForm'); // adding new users
-			var users = $('#users'); // array of users
-			var username = $('#username');
-			var error = $('#error');
+	// 		var usernameForm = $('#usernameForm'); // adding new users
+	// 		var users = $('#users'); // array of users
+	// 		var username = $('#username');
+	// 		var error = $('#error');
 
-			//add event handler
-			usernameForm.submit(function(e){
-				e.preventDefault();
-				socket.emit('new user', username.val(), function(data){ // look at param for socket.emit
-					if(data){
-						$('#namesWrapper').hide();
-						$('#mainWrapper').show();
-					}else{
-						error.html('please choose new nickname');
-					}
-				});
-				username.val('');
-			});
+	// 		var timeInMs = Date.now();
 
-			socket.on('nickname', function(data){ // this is adding new users to the screen?
-				var html = '';
-				for(i = 0; i < data.length; i++){
-					html += data[i] + '<br>';
-				}
-				users.html(html);
-			});
+	// 		//add event handler
+	// 		usernameForm.submit(function(e){
+	// 			e.preventDefault();
+	// 			socket.emit('new user', username.val(), function(data){ // look at param for socket.emit
+	// 				if(data){
+	// 					$('#namesWrapper').hide();
+	// 					$('#mainWrapper').show();
+	// 				}else{
+	// 					error.html('please choose new nickname');
+	// 				}
+	// 			});
+	// 			username.val('');
+	// 		});
 
-
-			messageForm.submit(function(e){ //bind an event handler to the messageForm
-				e.preventDefault(); //prevent default because we dont want the form to summit and refresh
-				socket.emit('send message', message.val()); //send message to the server
-				message.val(''); //after the message has been sent, the window is cleared
-
-			});
-
-			socket.on('new message', function(data){
-				chat.append('<strong>' + data.user + '</strong>: ' + data.msg + '<br>'); 
-			});
+	// 		socket.on('nickname', function(data){ // this is adding new users to the screen?
+	// 			var html = '';
+	// 			for(i = 0; i < data.length; i++){
+	// 				html += data[i] + '<br>';
+	// 			}
+	// 			users.html(html);
+	// 		});
 
 
+	// 		messageForm.submit(function(e){ //bind an event handler to the messageForm
+	// 			e.preventDefault(); //prevent default because we dont want the form to summit and refresh
+	// 			socket.emit('send message', message.val()); //send message to the server
+	// 			message.val(''); //after the message has been sent, the window is cleared
+
+	// 		});
+
+	// 		socket.on('new message', function(data){
+	// 			chat.append(timeInMs + '<br>' + '<strong>' + data.user + '</strong>: ' + data.msg + '<br>'); 
+	// 		});
 
 
-	});
+
+
+	// });
 
 	</script>
 </body>

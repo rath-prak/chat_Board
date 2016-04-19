@@ -20,6 +20,10 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + '/views/index.html'); // send file to client
 });
 
+app.get('/message', function(req, res){
+	res.sendFile(__dirname + '/views/message.html'); // send file to client
+});
+
 
 var nickname = [];
 
