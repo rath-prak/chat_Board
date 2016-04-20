@@ -54,7 +54,6 @@ $(document).ready(function(){
 		chat.append('<br>' + '<strong>' + data.user + '</strong>: ' + data.msg + '<br>'); 
 	});
 
-
 });
 
 	

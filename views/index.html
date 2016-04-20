@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>kittyChat</title>
+	<title>Premier League Chat Board</title>
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/alvarotrigo/pagePiling.js/master/jquery.pagepiling.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	  <link rel="stylesheet" href="./css/animate.css">
 
 </head>
 <body>
@@ -24,11 +25,20 @@
 
 		<div id="contentWrapper" class="section"> <!-- this will show when username has been selected -->
 			
+			<nav>
+			<div id="whiteLogo"><img src="./img/epl_logo_white.png" alt="white logo"></div>
+				<ul id="myMenu">
+				    <li><a href="#" id="league">league table</a></li>
+				    <li><a href="#" id="login">clubs</a></li>
+				    <li><a href="#">fixtures</a></li>
+				</ul>
+			</nav>
+				
 			<div class="secondContentWrapper">
 			<div class="featureImage"></div>
-			
+
 				<div id="userWrapper"> <!-- this will be generated dynamically  -->
-					<p>members in chat</p>
+					<p id="userHeading">USERS</p>
 					<div id="users">	
 					</div>
 				</div>
@@ -62,12 +72,6 @@
 	
 </body>
 </html>
-
-
-
-
-
-
 
 
 

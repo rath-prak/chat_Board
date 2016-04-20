@@ -9,22 +9,26 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
-
-
 /*-----------chat page--------------------*/
 .featureImage{
 	width: 100%;
-	background: red;
-	height: 300px;
+	background: url('../img/banner_mockup.png')no-repeat;
+	/*background-size: cover;*/
+	background-size: 100%;
+	height: 90px;
 	margin-bottom: 10px;
 	border-radius: 5px;
 
 }
 
 #contentWrapper{
-	background: #38003d;
+	/*background: linear-gradient(#000000, #38003d);*/
+	background: url('../img/epbackground.jpg');
+	background-size: 100%;
+/*	background: #38003d;*/
 	text-align: center;
-	border: 3px red solid;
+/*	display: block;*/
+	height: 700px; 
 }
 .secondContentWrapper{
 	margin: auto;
@@ -36,52 +40,88 @@ body{
 	/*display: inline-block;*/
 	float: left;
 	/*border: 3px red solid;*/
-	border-radius: 5px;
-	background: #9CCFE6;
-	height: 170px;
+	border-radius: 3px;
+	background: rgba(56, 0, 61, 0.4);
+	border: 1px solid rgba(255,255,255, 0.4);
+	height: 203px;
 	width: 171px;
 	margin-right: 10px;
+	color: white;
+	text-align: left;
+	box-sizing: border-box;
+	padding: 10px;
 
 }
 
 #chatWrapper{
 	float: left;
-/*	border: 3px blue solid;
-*/	border-radius: 5px;
-	background: #9CCFE6;
+	border-radius: 3px;
+	background: #230028;
+	border: 1px solid rgba(255,255,255, 0.4);
 	padding: 10px;
-	width: 625px;
-	height: 150px;
-
+	width: 624px;
+	height: 181px;
 
 }
 
 #chatWindow{
-	height: 100px;
-	background: #D8E3E6;
-	width: 625px;
+	height: 130px;
+	background: #DFDFDF;
+	width: 622px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	text-align: left;
+	box-sizing: border-box;
+	padding-left: 10px;
 
 }
+#message{
+	width: 500px;
+	border-radius: 3px;
+	border: none;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+#chatSend{
+	width: 113px;
+	margin-left: 5px;
+	background: #5A0062;
+	border:none;
+	color: white;
+	border-radius: 3px;
+	font-size: 14px;
+	cursor: pointer;
+}
 
-
+#chatSend:hover{
+	background: #6E0077;
+}
 
 input{
 	height: 40px;
 }
 
-/*-----------------------------------------*/
+#userHeading{
+	color:#5A0062;
+	font-weight: 900;
+	text-align: center;
+}
+
+/*------------Landing page------------------*/
 
 
-#namesWrapper{
-	background: #ff015b;
+#namesWrapper {
+	background: linear-gradient(#ff015b, #ff5858);
+	/*background: #ff015b;*/
 	/*background: url('../img/bg.jpeg');
 	background-size: cover;*/
+	
 
 }
 
 .graphicContent{
 	margin: 0 auto;
-	width: 750px;
+	width: 760px;
 	text-align: center;
 }
 
@@ -91,7 +131,7 @@ input{
 	border-radius: 5px; /*dont forget to add vendor prefixes*/
 	border: 0px solid;
 	margin-top: 60px;
-	margin-left: 10px;
+	margin-left: 20px;
 
 	color: #434343;
 	font-weight: 900;
@@ -117,6 +157,7 @@ input:focus {
 }
 #joinChat:hover{
 	background: #DA004D;
+	cursor: pointer;
 
 }
 
@@ -129,5 +170,46 @@ input:focus {
 #usernameForm{
 	display: inline-block;
 	float: left;
+}
+
+/*-----------nav bar--------------------*/
+nav{
+	width: 100%;
+	position: absolute;
+    right: 20px;
+    top: 25px;
+
+}
+#myMenu li{
+	display: block;
+	float: right;
+	/*width: 120px;*/
+	text-transform: uppercase;
+	padding: 10px;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+#myMenu li a{
+	text-decoration: none;
+	color: white;
+}
+
+#league{
+	border: 1px solid rgba(255,255,255, 0.5);
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#league:hover{
+	background: #ff015b;
+	cursor: pointer;
+}	
+#whiteLogo img{
+	width: 150px;
+	position: absolute;
+	left: 50px;
+	right: 40px;
 }
 
