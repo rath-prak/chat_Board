@@ -23,20 +23,25 @@
 	
 
 		<div id="contentWrapper" class="section"> <!-- this will show when username has been selected -->
-			<h2>Kitty Chat</h2>
-			<div id="chatWrapper">
-				<div id="chatWindow">
+			
+			<div class="secondContentWrapper">
+			<div class="featureImage"></div>
+			
+				<div id="userWrapper"> <!-- this will be generated dynamically  -->
+					<p>members in chat</p>
+					<div id="users">	
+					</div>
 				</div>
-				<form id="messageForm">
-					<input id="message" placeholder="type a message..."> <!-- this is the message which is sent to server -->
-					<input type="submit" value="send">
-				</form>
-			</div>
-			<div id="userWrapper"> <!-- this will be generated dynamically  -->
-				<div id="users">
-					
+				<div id="chatWrapper">
+					<div id="chatWindow">
+					</div>
+					<form id="messageForm">
+						<input id="message" placeholder="type a message..."> <!-- this is the message which is sent to server -->
+						<input id="chatSend" type="submit" value="send">
+					</form>
 				</div>
-			</div>
+			</div>	
+
 		</div> <!-- end of main wrapper -->
 	
 	</div> <!-- end of main container -->

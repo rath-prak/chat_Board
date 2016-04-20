@@ -1,33 +1,77 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,300);
 
+*{
+	margin: 0;
+	padding: 0;
+}
 
 body{
 	font-family: 'Roboto', sans-serif;
 }
 
-#chatWindow{
+
+
+/*-----------chat page--------------------*/
+.featureImage{
+	width: 100%;
+	background: red;
 	height: 300px;
-	background: #D8E3E6;
-}
-#contentWrapper{
+	margin-bottom: 10px;
+	border-radius: 5px;
 
 }
-#chatWrapper{
-	float: left;
-	border: 1px #858C8D solid;
-	border-radius: 5px;
-	background: #9CCFE6;
-	padding: 10px;
+
+#contentWrapper{
+	background: #38003d;
+	text-align: center;
+	border: 3px red solid;
+}
+.secondContentWrapper{
+	margin: auto;
+	text-align: center;	
+/*	border: 3px yellow solid;*/
+	width: 65%;
 }
 #userWrapper{
+	/*display: inline-block;*/
 	float: left;
-	border: 1px #858C8D solid;
+	/*border: 3px red solid;*/
 	border-radius: 5px;
 	background: #9CCFE6;
-	padding: 10px;
-	margin-left: 20px;
+	height: 170px;
+	width: 171px;
+	margin-right: 10px;
 
 }
+
+#chatWrapper{
+	float: left;
+/*	border: 3px blue solid;
+*/	border-radius: 5px;
+	background: #9CCFE6;
+	padding: 10px;
+	width: 625px;
+	height: 150px;
+
+
+}
+
+#chatWindow{
+	height: 100px;
+	background: #D8E3E6;
+	width: 625px;
+
+}
+
+
+
+input{
+	height: 40px;
+}
+
+/*-----------------------------------------*/
+
+
 #namesWrapper{
 	background: #ff015b;
 	/*background: url('../img/bg.jpeg');
@@ -49,22 +93,10 @@ body{
 	margin-top: 60px;
 	margin-left: 10px;
 
-	color: white;
+	color: #434343;
 	font-weight: 900;
 	font-size: 15px;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  padding-left: 20px;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  padding-left: 20px;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  padding-left: 20px;
-}
-:-moz-placeholder { /* Firefox 18- */
-  padding-left: 20px;
+	text-align: center;
 }
 
 input:focus {
@@ -88,9 +120,7 @@ input:focus {
 
 }
 
-input{
-	height: 30px;
-}
+
 #logo img{
 	display: inline-block;
 	float: left;

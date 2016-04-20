@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	/* ------------------- PAGEPILING --------------------*/	
 
-	$('#pagepiling').pagepiling({direction: 'horizontal'});
+	$('#pagepiling').pagepiling({direction: 'horizontal', loopBottom: 'true'});
 
 
 	/* ---------------------------------------------------*/
@@ -24,8 +24,9 @@ $(document).ready(function(){
 		e.preventDefault();
 		socket.emit('new user', username.val(), function(data){ // look at param for socket.emit
 			if(data){
-				$('#namesWrapper').hide();
-				$('#mainWrapper').show();
+				// $('#namesWrapper').hide();
+				// $('#mainWrapper').show();
+				$.fn.pagepiling.moveSectionDown();
 			}else{
 				error.html('please choose new nickname');
 			}
